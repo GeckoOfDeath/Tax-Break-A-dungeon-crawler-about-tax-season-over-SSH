@@ -1,8 +1,0 @@
-# SSH host key generated on first run (never commit this)
-ssh_host_key
-ssh_host_key.pub
-
-# Python junk
-__pycache__/
-*.pyc
-venv/
