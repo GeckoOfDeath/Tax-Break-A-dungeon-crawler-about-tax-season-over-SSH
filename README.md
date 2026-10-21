@@ -1,6 +1,14 @@
 # Tax Break! A dungeon crawler about tax season over SSH
 This is a Python game that can run over SSH. It is about Due Taxes gone wrong! 
 
+### Quick code copies
+```
+git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH
+pip install -r requirements.txt
+python ssh_server.py
+
+```
+
 # Steps for Running this game!!!!!!!
 
 ## **1. Make sure you have Python installed!**
@@ -13,7 +21,11 @@ this is a python game, so you need python.
 You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH' or the green Code button, then Download ZIP)
 
 ## **3. In the folder you have said files installed. Run 'pip install -r requirements.txt'.**
-(Use 'python -m pip install -r requirements.txt' if giving a pip error. also try reset.)
+(Use 
+```
+python -m pip install -r requirements.txt
+```
+if giving a pip error. also try reset.)
 
 ## **4. Run 'py ssh_server.py' and leave that window open.**
 (Use python3 or python if py doesnt work, also make sure its all in the same folder.)
