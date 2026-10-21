@@ -28,8 +28,12 @@ $\color{red}{\textsf{THERE IS NO SECRET ENDING. THERE IS NO SECRET ENDING.}}$
 
 ## Trouble shooting.
 1.make sure your in the right folder.
+
 2. make sure python is installed
+
 3. use python3 or python if py doesnt work
+
 4. if pip is installed and still giving error, use 'python -m pip install -r requirements.txt'
+
 5. had a problem with requirements.txt showing up, reset fixed.
 
