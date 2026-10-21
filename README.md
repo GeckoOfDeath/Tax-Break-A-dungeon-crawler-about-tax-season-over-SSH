@@ -13,8 +13,7 @@ this is a python game, so you need python.
 You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH' or the green Code button, then Download ZIP)
 
 ## **3. In the folder you have said files installed. Run 'pip install -r requirements.txt'.**
-(Use 'python -m pip install -r requirements.txt' if giving an pip error. also try reset.)
-
+(Use 'python -m pip install -r requirements.txt' if giving a pip error. also try reset.)
 
 ## **4. Run 'py ssh_server.py' and leave that window open.**
 (Use python3 or python if py doesnt work, also make sure its all in the same folder.)
@@ -29,7 +28,7 @@ You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawl
 ### I worked very hard on this game, I really hope you enjoy it, There are 2 endings and a mini boss to discover.
 $\color{red}{\textsf{THERE IS NO SECRET ENDING. THERE IS NO SECRET ENDING.}}$
 
-## Trouble shooting.
+## Troubleshooting.
 1.make sure your in the right folder.
 
 2. make sure python is installed
