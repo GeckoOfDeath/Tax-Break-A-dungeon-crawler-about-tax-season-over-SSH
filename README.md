@@ -1,5 +1,5 @@
 # Tax Break! A dungeon crawler about tax season over SSH
-This is a Python game that can run over SSH. It is about Due Taxes gone wrong! 
+This is a Python game that can run over SSH. It is about Due Taxes gone wrong! The beginning is a little tough, but find the right path to get to the fun stuff!
 
 ![Alt text](https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH/blob/main/PhotoForRead.me.jpg)
 
