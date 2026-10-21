@@ -18,6 +18,9 @@ You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawl
 
 ## **4. Run 'py ssh_server.py' and leave that window open.**
 (Use python3 or python if py doesnt work, also make sure its all in the same folder.)
+  > [!WARNING]
+  > Leave the server window open while you play.
+
 
 ## **5.Create a second terminal, in that 'run ssh -p 2222 localhost'.**
 
