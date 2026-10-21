@@ -12,7 +12,7 @@ this is a python game, so you need python.
 ## **2. Download the repo!**
 You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH' or the green Code button, then Download ZIP)
 
-## **3. In the folder you have said files installed. Run 'pip install -r requirments.txt'.**
+## **3. In the folder you have said files installed. Run 'pip install -r requirements.txt'.**
 (Use 'python -m pip install -r requirements.txt' if giving an pip error. also try reset.)
 
 
