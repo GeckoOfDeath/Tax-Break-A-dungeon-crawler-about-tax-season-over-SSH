@@ -78,7 +78,7 @@ def main():
             notification()
             break
         elif choice == '2':
-            video_game()
+            pizza()
             break
 
 
@@ -97,7 +97,7 @@ def notification():
         pizza()
 
 
-def video_game():
+def pizza():
     print("\nYou grab your pizza and sit down to eat it. You hear a knock on your door. You try to ignore it, but he keeps knocking. Do you?")
     print("1. Go answer the door")
     print("2. Go back to eating your pizza and ignore it.")
