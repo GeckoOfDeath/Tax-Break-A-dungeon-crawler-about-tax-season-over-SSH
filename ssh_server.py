@@ -15,8 +15,8 @@ import sys
 
 import asyncssh
 
-HOST = "127.0.0.1"   # change to "0.0.0.0" ONLY if you want others to connect
-PORT = 2222
+HOST = os.environ.get("GAME_HOST", "127.0.0.1")
+PORT = int(os.environ.get("GAME_PORT", "2222"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 GAME = os.path.join(HERE, "tax_game_v2.py")
