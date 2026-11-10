@@ -5,12 +5,12 @@ This is a Python game that can run over SSH. It is about Due Taxes gone wrong! T
 
 Rated Pg 13 (fictional violence, Uses its one swear.)
 
-## Play online (NOT YET ENABLED!!!!!!! WILL BE ONLINE WHEN I GET APPROVED BY NEST.)
+## Play online (NOW ONLINE!!!!! HAVE FUN. *only for ipv6 users)
 
 Open a terminal and run:
 
 ```
-ssh -p 2222 NOT-YET-READY
+ssh -p 2222 2a01:4f9:3a:276e::374
 ```
 
 Type `yes` if it asks about the host key. No password or username is needed.
