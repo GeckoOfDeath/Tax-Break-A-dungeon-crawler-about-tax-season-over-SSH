@@ -7,20 +7,31 @@ Play:    ssh -p 2222 localhost          (from a second terminal)
 
 By default it only listens on 127.0.0.1, so only YOUR computer can connect.
 No login or password is needed, and it never touches your system's real SSH.
+
+Optional environment variables:
+  GAME_HOST          address to listen on (default 127.0.0.1)
+  GAME_PORT          port to listen on (default 2222)
+  GAME_MAX_PLAYERS   most players at once (default 20)
+  GAME_IDLE_SECONDS  disconnect after this many seconds of no typing (default 600)
 """
 
 import asyncio
 import os
 import sys
+import time
 
 import asyncssh
 
 HOST = os.environ.get("GAME_HOST", "127.0.0.1")
 PORT = int(os.environ.get("GAME_PORT", "2222"))
+MAX_PLAYERS = int(os.environ.get("GAME_MAX_PLAYERS", "20"))
+IDLE_SECONDS = int(os.environ.get("GAME_IDLE_SECONDS", "600"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 GAME = os.path.join(HERE, "tax_game_v2.py")
 HOST_KEY = os.path.join(HERE, "ssh_host_key")
+
+active_players = 0
 
 
 class GameServer(asyncssh.SSHServer):
@@ -28,9 +39,10 @@ class GameServer(asyncssh.SSHServer):
         return False  # no password needed
 
 
-async def handle_client(process):
+async def run_game(process):
     # If the client has a real terminal, it won't echo typing, so we do it.
     echo = process.get_terminal_type() is not None
+    last_activity = [time.monotonic()]
 
     env = dict(os.environ, PYTHONIOENCODING="utf-8")
     game = await asyncio.create_subprocess_exec(
@@ -57,6 +69,7 @@ async def handle_client(process):
             data = await process.stdin.read(1024)
             if not data:
                 return
+            last_activity[0] = time.monotonic()
             for ch in data:
                 if in_escape:
                     if ch.isalpha() or ch == "~":
@@ -82,15 +95,38 @@ async def handle_client(process):
                     if echo:
                         process.stdout.write(ch)
 
+    async def watch_idle():
+        while True:
+            await asyncio.sleep(10)
+            if time.monotonic() - last_activity[0] > IDLE_SECONDS:
+                process.stdout.write("\r\n\r\nDisconnected: you were idle too long.\r\n")
+                return
+
     out_task = asyncio.create_task(pump_output())
     in_task = asyncio.create_task(pump_input())
-    await asyncio.wait({out_task, in_task}, return_when=asyncio.FIRST_COMPLETED)
+    idle_task = asyncio.create_task(watch_idle())
+    tasks = (out_task, in_task, idle_task)
+    await asyncio.wait(set(tasks), return_when=asyncio.FIRST_COMPLETED)
 
     if game.returncode is None:
         game.kill()
-    for task in (out_task, in_task):
+    for task in tasks:
         task.cancel()
-    process.exit(0)
+    await game.wait()
+
+
+async def handle_client(process):
+    global active_players
+    if active_players >= MAX_PLAYERS:
+        process.stdout.write("The server is full right now. Please try again in a few minutes.\r\n")
+        process.exit(1)
+        return
+    active_players += 1
+    try:
+        await run_game(process)
+    finally:
+        active_players -= 1
+        process.exit(0)
 
 
 async def main():
