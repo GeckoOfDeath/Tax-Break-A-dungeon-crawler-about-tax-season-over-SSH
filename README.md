@@ -1,13 +1,14 @@
 # Tax Break! A dungeon crawler about tax season over SSH
+
 This is a Python game that can run over SSH. It is about Due Taxes gone wrong! The beginning is a little tough, but find the right path to get to the fun stuff!
 
-![Alt text](https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH/blob/main/PhotoForRead.me.jpg)
+![Tax Break screenshot](PhotoForRead.me.jpg)
 
-Rated Pg 13 (fictional violence, Uses its one swear.)
+Rated PG-13 (fictional violence, uses its one swear.)
 
-## Play online (NOW ONLINE!!!!! HAVE FUN. *only for ipv6 users)
+## Play online (IPv6 only)
 
-Open a terminal and run:
+The game is now online. Have fun! Open a terminal and run:
 
 ```
 ssh -p 2222 2a01:4f9:3a:276e::374
@@ -16,46 +17,26 @@ ssh -p 2222 2a01:4f9:3a:276e::374
 Type `yes` if it asks about the host key. No password or username is needed.
 
 > [!NOTE]
-> This needs IPv6. Check yours at test-ipv6.com. If it says you don't have it, or the server is down, use Self Host.
+> This needs IPv6. Check yours at test-ipv6.com. On Windows, "Unknown error" usually means you don't have IPv6. If you don't, try a phone hotspot (or the Termius app: new host, that address, port 2222, any username), or use Self Host below. The server holds 20 players at once, and it can go down sometimes.
 
+## Self Host
 
+1. **Make sure Python is installed.** This is a Python game, so you need Python.
+2. **Make sure pip is installed.** If pip gives you problems, see Troubleshooting.
+3. **Download the repo.** Use `git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH` or the green Code button, then Download ZIP.
+4. **Install the requirements.** In the game folder, run `pip install -r requirements.txt`. If you get a pip error, use `python -m pip install -r requirements.txt`.
+5. **Start the server.** Run `py ssh_server.py` and leave that window open. If `py` doesn't work, use `python3` or `python`. Make sure you're in the folder with all the files.
+6. **Connect.** Open a second terminal and run `ssh -p 2222 localhost`.
+7. **Play the game!**
 
+I worked very hard on this game, I really hope you enjoy it. There are 2 endings and a mini boss to discover.
 
-# (Self Host) Steps for Running this game!!!!!!!
-
-## **1. Make sure you have Python installed!**
-this is a python game, so you need python.
-
-## 1.5. Make sure pip is installed
-(if pip gives you problems reset and use fix on 3.)
-
-## **2. Download the repo!**
-You can use 'git clone https://github.com/GeckoOfDeath/Tax-Break-A-dungeon-crawler-about-tax-season-over-SSH' or the green Code button, then Download ZIP)
-
-## **3. In the folder you have said files installed. Run 'pip install -r requirements.txt'.**
-(Use python -m pip install -r requirements.txt if giving a pip error. also try reset.)
-
-## **4. Run 'py ssh_server.py' and leave that window open.**
-(Use python3 or python if py doesnt work, also make sure its all in the same folder.)
-  > [!WARNING]
-  > Leave the server window open while you play.
-
-
-## **5.Create a second terminal, in that 'run ssh -p 2222 localhost'.**
-
-## **6. PLAY THE GAME!!!!!**
-
-### I worked very hard on this game, I really hope you enjoy it, There are 2 endings and a mini boss to discover.
 $\color{red}{\textsf{THERE IS NO SECRET ENDING. THERE IS NO SECRET ENDING.}}$
 
-## Troubleshooting.
-1.make sure your in the right folder.
+## Troubleshooting
 
-2. make sure python is installed
-
-3. use python3 or python if py doesnt work
-
-4. if pip is installed and still giving error, use 'python -m pip install -r requirements.txt'
-
-5. had a problem with requirements.txt showing up, reset fixed.
-
+1. Make sure you're in the right folder.
+2. Make sure Python is installed.
+3. Use `python3` or `python` if `py` doesn't work.
+4. If pip is installed and still giving an error, use `python -m pip install -r requirements.txt`.
+5. If `requirements.txt` doesn't show up in the folder, re-download the repo.
